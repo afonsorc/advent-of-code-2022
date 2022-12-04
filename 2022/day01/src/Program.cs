@@ -2,13 +2,14 @@
 using System.IO;
 
 
-
 namespace day01{
     class Program{
         
         static void Main(string[] args){
             
-            const string INPUT_FILE = "input.txt";
+            // read and process input onto array
+            const string INPUT_FILE = "../input/input.txt";
+            string[] input = System.IO.File.ReadAllLines(INPUT_FILE);
 
             int firstElf = 0;
             int secondElf = 0;
@@ -17,7 +18,7 @@ namespace day01{
             int size = File.ReadAllLines(INPUT_FILE).Length;
             int lineNumber = 0;
 
-            foreach(string line in System.IO.File.ReadLines(INPUT_FILE)){
+            foreach(string line in input){
 
                 if(!String.Equals(line, "")){
                     currentCalories += Convert.ToInt32(line);
