@@ -9,12 +9,20 @@ namespace day04 {
             const string INPUT_FILE = "../input/input.txt";
             string[] input = System.IO.File.ReadAllLines(INPUT_FILE);
             
-            //partOne(input);   
-            partTwo(input);
+            int solutionOne = 0;
+            int solutionTwo = 0;
+
+            solutionOne = partOne(input); 
+            System.Console.WriteLine("--------------\nPart1: {0}\n--------------", solutionOne);
+
+            solutionTwo = partTwo(input);
+            System.Console.WriteLine("--------------\nPart2: {0}\n--------------", solutionTwo);
+
+            return;
         }
 
 
-        static void partOne(string[] input){
+        static int partOne(string[] input){
             
             int contained = 0;
             foreach(string row in input){
@@ -27,12 +35,11 @@ namespace day04 {
                 }
             }
 
-            System.Console.WriteLine(contained);
-            return;
+            return contained;
         }
 
 
-        static void partTwo(string[] input){
+        static int partTwo(string[] input){
             
             int contained = 0;
             foreach(string row in input){
@@ -47,8 +54,7 @@ namespace day04 {
                 }
             }
 
-            System.Console.WriteLine(contained);
-            return;
+            return contained;
         }
     }
 }
