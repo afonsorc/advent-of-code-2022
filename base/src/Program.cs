@@ -24,21 +24,21 @@ namespace base {
 
         static int partOne(string[] input){
             
-            int out = 0;
+            int solution = 0;
 
             
 
-            return out;
+            return solution;
         }
 
 
         static int partTwo(string[] input){
             
-            int out = 0;
+            int solution = 0;
 
 
 
-            return out;
+            return solution;
         }
     }
 }
