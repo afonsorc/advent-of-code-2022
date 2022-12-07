@@ -141,12 +141,6 @@ namespace day07 {
             if(node.size < MAX_FILE_SIZE){
                 size += node.size;
             }
-            if(node.name.Length < 7){
-                //System.Console.WriteLine("{0}:\t\t{1}", node.name, node.size);
-            }
-            else{
-                //System.Console.WriteLine("{0}:\t{1}", node.name, node.size);
-            }
             return size;
         }
 
