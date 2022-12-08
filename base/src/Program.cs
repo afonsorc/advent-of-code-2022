@@ -8,16 +8,14 @@ namespace base {
             // read and process input onto array
             const string INPUT_FILE = "../input/input.txt";
             string[] input = System.IO.File.ReadAllLines(INPUT_FILE);
-            
-            int solutionOne = 0;
-            int solutionTwo = 0;
 
-            solutionOne = partOne(input); 
+            // write solution to part one
+            int solutionOne = partOne(input); 
             System.Console.WriteLine("--------------\nPart1: {0}\n--------------", solutionOne);
 
-            solutionTwo = partTwo(input);
+            // write solution to part two
+            int solutionTwo = partTwo(input);
             System.Console.WriteLine("--------------\nPart2: {0}\n--------------", solutionTwo);
-
             return;
         }
 
