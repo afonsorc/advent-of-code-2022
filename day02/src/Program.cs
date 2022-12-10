@@ -14,6 +14,7 @@ namespace day02{
             return;
         }
 
+
         const int myOffset = 88;
         const int opOffset = 65;
 
