@@ -21,60 +21,24 @@ namespace day09 {
         }
 
 
-        public struct Coords{
-            
-            public int x;
-            public int y;
-
-            public Coords(int X, int Y){
-                x = X;
-                y = Y;
-            }
-        }
-
         static int partOne(string[] input){
-
-            Coords head = new Coords(0, 0);
-            Coords tail = new Coords(0, 0);
-
-            // count starting tail position
-            HashSet<string> visited = new HashSet<string>();        
-            visited.Add(tail.x + ":" + tail.y);
-
-            foreach(string i in input){
-                
-                string[] move = i.Split(' ');
-                int step = Convert.ToInt32(move[1]);
-                
-                for(int s = 0; s < step; s++){
-
-                    // move head
-                    if(move[0] == "R") head.x++;
-                    else if(move[0] == "L") head.x--;
-                    else if(move[0] == "U") head.y++;
-                    else if(move[0] == "D") head.y--;
-
-                    // get distance from head to tail
-                    int dx = head.x - tail.x;
-                    int dy = head.y - tail.y;
-
-                    // distance bigger than sqrt(2) requires tail move
-                    if(Math.Sqrt(dx * dx + dy * dy) > 1.5){
-                        tail.x += Math.Sign(dx);
-                        tail.y += Math.Sign(dy);
-
-                        // add new tail position
-                        visited.Add(tail.x + ":" + tail.y);
-                    }
-                }
-            }
-            return visited.Count;
+            return ropeBridge(input, 2);
         }
 
 
         static int partTwo(string[] input){
+            return ropeBridge(input, 10);
+        }
+
+
+        struct Coords{
+            public int x;
+            public int y;
+        }
+
+
+        static int ropeBridge(string[] input, int knots){
             
-            int knots = 10;
             Coords[] rope = new Coords[knots];
 
             // count starting tail position
