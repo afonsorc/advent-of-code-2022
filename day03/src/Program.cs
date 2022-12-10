@@ -1,99 +1,85 @@
 ﻿using System;
 using System.Collections.Generic;
 
+
 namespace day03{
     class Program{
         static void Main(string[] args){
 
             // read and process input onto array
-            const string INPUT_FILE = "../input/input.txt";
-            string[] input = System.IO.File.ReadAllLines(INPUT_FILE);
-            
-            //partOne(input);
-            
-            partTwo(input);
+            string[] input = System.IO.File.ReadAllLines("../input/input.txt");
 
+            // write solutions
+            System.Console.WriteLine("----------------\nPart1: {0}\n----------------", partOne(input));
+            System.Console.WriteLine("----------------\nPart2: {0}\n----------------", partTwo(input));
+            return;
         }
 
 
-        static void partOne(string[] input){
-            
-            const int prioLower = 96;
-            const int prioUpper = 38;
+        const int prioLower = 96;
+        const int prioUpper = 38;
 
+
+        static int partOne(string[] input){
+            
             int priority = 0;
 
             foreach(string sack in input){
-                IDictionary<char, int> sackItems = new Dictionary<char, int>();
-                for(int i = 0; i < sack.Length / 2; i++){
-                    if(!sackItems.ContainsKey(sack[i])){
-                        sackItems.Add(sack[i], 1);
-                    } 
+                
+                HashSet<char> items = new HashSet<char>();
+
+                string first = sack.Substring(0, sack.Length / 2);
+                string second = sack.Substring(sack.Length / 2);
+
+                // add first half items to set
+                foreach(char item in first){
+                    items.Add(item);
                 }
 
-                for(int i = sack.Length / 2; i < sack.Length; i++){
-                    if(sackItems.ContainsKey(sack[i])){
-                        if(sackItems[sack[i]] == 1){
-                            if(sack[i] >= 65 && sack[i] <= 90){
-                                priority += sack[i] - prioUpper;
-                            } else if(sack[i] >= 97 && sack[i] <= 122){
-                                priority += sack[i] - prioLower;
-                            }
-                        }
+                // find second half item that already is in the set and sum its priority
+                foreach(char item in second){
+                    if(items.Contains(item)){
+                        priority += item - (Convert.ToInt32(Char.IsUpper(item))) * prioUpper - (Convert.ToInt32(Char.IsLower(item))) * prioLower;
                         break;
                     }
                 }
             }
 
-            System.Console.WriteLine(priority);
-            return;
+            return priority;
         }
 
 
-        static void partTwo(string[] input){
-            
-            const int prioLower = 96;
-            const int prioUpper = 38;
+        static int partTwo(string[] input){
 
+            int elf = 0;
             int priority = 0;
-            int row = 0;
 
-            IDictionary<char, int> sackItems = new Dictionary<char, int>();
+            HashSet<char> itemsOne = new HashSet<char>();
+            HashSet<char> itemsTwo = new HashSet<char>();
 
             foreach(string sack in input){
-               
-                for(int i = 0; i < sack.Length; i++){
-
-                    // Key is in row 0, add it 
-                    if(!sackItems.ContainsKey(sack[i]) && row == 0){
-                        sackItems.Add(sack[i], row + 1);
-                    }
-                    // key exists in row non-0
-                    if(sackItems.ContainsKey(sack[i]) && row != 0){
-                        // key existed in every row so far
-                        if(sackItems[sack[i]] == row){
-                            sackItems[sack[i]]++;
-                            // key exists in all 3 rows
-                            if(sackItems[sack[i]] == 3){
-                                if(sack[i] >= 65 && sack[i] <= 90){
-                                    priority += sack[i] - prioUpper;
-                                } else if(sack[i] >= 97 && sack[i] <= 122){
-                                    priority += sack[i] - prioLower;
-                                }
-                                break;
-                            }
+                
+                // if on the third elf, compare the item with both other sets and change the priority if the item is a badge
+                foreach(char item in sack){
+                    if(elf == 0) itemsOne.Add(item);
+                    else if(elf == 1) itemsTwo.Add(item);
+                    else if(elf == 2){
+                        if(itemsOne.Contains(item) && itemsTwo.Contains(item)){
+                            priority += item - (Convert.ToInt32(Char.IsUpper(item))) * prioUpper - (Convert.ToInt32(Char.IsLower(item))) * prioLower;
+                            break;
                         }
                     }
                 }
                 
-                if(row == 2){
-                    row = 0;
-                    sackItems.Clear();
+                // if on the third elf, clear sets and reset to the next elf group
+                if(++elf == 3){
+                    elf = 0;
+                    itemsOne.Clear();
+                    itemsTwo.Clear();
                 }
-                else row++;
             }
-            System.Console.WriteLine(priority);
-            return;
+
+            return priority;
         }
     }
 }
