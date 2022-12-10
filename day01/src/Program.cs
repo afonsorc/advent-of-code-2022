@@ -1,45 +1,45 @@
 ﻿using System;
-using System.IO;
+using System.Linq;
 
 
 namespace day01{
     class Program{
-        
         static void Main(string[] args){
-            
+
             // read and process input onto array
-            const string INPUT_FILE = "../input/input.txt";
-            string[] input = System.IO.File.ReadAllLines(INPUT_FILE);
+            string[] input = System.IO.File.ReadAllLines("../input/input.txt");
 
-            int firstElf = 0;
-            int secondElf = 0;
-            int thirdElf = 0;
-            int currentCalories = 0;
-            int size = File.ReadAllLines(INPUT_FILE).Length;
-            int lineNumber = 0;
+            // write solutions
+            System.Console.WriteLine("----------------\nPart1: {0}\n----------------", partOne(input));
+            System.Console.WriteLine("----------------\nPart2: {0}\n----------------", partTwo(input));
+            return;
+        }
 
+
+        static int partOne(string[] input){
+            return calorieCounting(input, 1);
+        }
+
+
+        static int partTwo(string[] input){
+            return calorieCounting(input, 3);
+        }
+            
+
+        static int calorieCounting(string[] input, int numberOfElves){
+
+            int calories = 0;
+            int[] elves = new int[numberOfElves];
+            
             foreach(string line in input){
-
-                if(!String.Equals(line, "")){
-                    currentCalories += Convert.ToInt32(line);
+                if(line == ""){
+                    if(calories > elves.Min()) elves[Array.IndexOf(elves, elves.Min())] = calories;
+                    calories = 0;
                 }
-
-                if(String.Equals(line, "") || lineNumber == size){
-                    if(firstElf < currentCalories){
-                        thirdElf = secondElf;
-                        secondElf = firstElf;
-                        firstElf = currentCalories;
-                    }else if(secondElf < currentCalories){
-                        thirdElf = secondElf;
-                        secondElf = currentCalories;
-                    }else if(thirdElf < currentCalories){
-                        thirdElf = currentCalories;
-                    }
-                    currentCalories = 0;
-                }
+                else calories += Convert.ToInt32(line);
             }
 
-            System.Console.WriteLine(firstElf + secondElf + thirdElf);
+            return elves.Sum();
         }
     }
 }
