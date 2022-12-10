@@ -13,7 +13,7 @@ Using it to learn/practice C#
 - [x] Day 07: No Space Left On Device
 - [x] Day 08: Treetop Tree House
 - [x] Day 09: Rope Bridge
-- [ ] Day 10:
+- [ ] Day 10: Cathode-Ray Tube
 - [ ] Day 11:
 - [ ] Day 12:
 - [ ] Day 13:
@@ -29,4 +29,3 @@ Using it to learn/practice C#
 - [ ] Day 23:
 - [ ] Day 24:
 - [ ] Day 25:
-- 
