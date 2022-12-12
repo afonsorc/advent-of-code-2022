@@ -15,7 +15,7 @@ Using it to learn/practice C#
 - [x] Day 09: Rope Bridge
 - [x] Day 10: Cathode-Ray Tube
 - [x] Day 11: Monkey in the Middle
-- [ ] Day 12:
+- [x] Day 12: Hill Climbing Algorithm
 - [ ] Day 13:
 - [ ] Day 14:
 - [ ] Day 15:
