@@ -136,15 +136,6 @@ namespace day14{
                 }
                 image[sandOrigin.y, sandOrigin.x] = '+';
             }
-/*
-            //print image
-            for(int y = 0; y < height; y++){
-                System.Console.Write("{0} ", y);
-                for(int x = 0; x < width; x++){
-                    System.Console.Write(image[y,x]);
-                }
-                System.Console.WriteLine();
-            }*/
 
             return sandBlocks;
         }
@@ -268,14 +259,6 @@ namespace day14{
                     sandBlocks++;
                     restCounter = 0;
                 }
-                ////print image
-                //for(int y = 0; y < height; y++){
-                //    System.Console.Write("{0} ", y);
-                //    for(int x = 0; x < width; x++){
-                //        System.Console.Write(image[y,x]);
-                //    }
-                //    System.Console.WriteLine();
-                //}
             }
 
             //print image
