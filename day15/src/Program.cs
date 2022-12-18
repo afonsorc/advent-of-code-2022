@@ -75,7 +75,9 @@ namespace day15{
                 if(s.y == index) image[s.x - edges[0].x] = 'S';
             }
 
-
+            foreach(var b in beacons){
+                if(b.y == index) image[b.x - edges[0].x] = 'B';
+            }
 
             for(int s = 0; s < input.Length; s++){
                 for(int x = sensors[s].x - distanceToBeacon[s]; x < sensors[s].x + distanceToBeacon[s]; x++){
