@@ -84,7 +84,6 @@ namespace day18{
 
             while(queue.Count > 0){
                 Cube cur = queue.Dequeue();
-
                 List<Cube> neighbours = new List<Cube>();
                 if(cur.X < cubes.GetLength(0) - 1) neighbours.Add(new Cube(cur.X + 1, cur.Y, cur.Z));
                 if(cur.X > 0) neighbours.Add(new Cube(cur.X - 1, cur.Y, cur.Z));

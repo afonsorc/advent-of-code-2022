@@ -19,9 +19,9 @@ Using it to learn/practice C#
 - [ ] Day 13: Distress Signal
 - [x] Day 14: Regolith Reservoir
 - [x] Day 15: Beacon Exclusion Zone
-- [ ] Day 16:
-- [ ] Day 17:
-- [ ] Day 18:
+- [ ] Day 16: Proboscidea Volcanium
+- [ ] Day 17: Pyroclastic Flow
+- [x] Day 18: Boiling Boulders
 - [ ] Day 19:
 - [ ] Day 20:
 - [ ] Day 21:
