@@ -22,10 +22,10 @@ Using it to learn/practice C#
 - [ ] Day 16: Proboscidea Volcanium
 - [ ] Day 17: Pyroclastic Flow
 - [x] Day 18: Boiling Boulders
-- [ ] Day 19:
-- [ ] Day 20:
-- [ ] Day 21:
-- [ ] Day 22:
-- [ ] Day 23:
-- [ ] Day 24:
-- [ ] Day 25:
+- [ ] Day 19: Not Enough Minerals
+- [x] Day 20: Grove Positioning System
+- [ ] Day 21: Monkey Math
+- [ ] Day 22: Monkey Map
+- [ ] Day 23: Unstable Diffusion
+- [ ] Day 24: Blizzard Basin
+- [ ] Day 25: Full of Hot Air

@@ -22,11 +22,11 @@ namespace day20{
         }
 
 
-        static long decrypt(string[] input, int decriptionKey, int mixingCount){
+        static long decrypt(string[] input, int decryptionKey, int mixingCount){
             
             var initialFile = new List<(long value, int index)>();
             for (int i = 0; i < input.Length; i++){
-                initialFile.Add((long.Parse(input[i]) * decriptionKey, i));
+                initialFile.Add((long.Parse(input[i]) * decryptionKey, i));
             }
 
             var file = new List<(long value, int index)>(initialFile);
