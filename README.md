@@ -16,7 +16,7 @@ Using it to learn/practice C#
 - [x] Day 10: Cathode-Ray Tube
 - [x] Day 11: Monkey in the Middle
 - [x] Day 12: Hill Climbing Algorithm
-- [ ] Day 13: Distress Signal
+- [x] Day 13: Distress Signal
 - [x] Day 14: Regolith Reservoir
 - [x] Day 15: Beacon Exclusion Zone
 - [x] Day 16: Proboscidea Volcanium
