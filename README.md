@@ -24,7 +24,7 @@ Using it to learn/practice C#
 - [x] Day 18: Boiling Boulders
 - [ ] Day 19: Not Enough Minerals
 - [x] Day 20: Grove Positioning System
-- [ ] Day 21: Monkey Math
+- [x] Day 21: Monkey Math
 - [ ] Day 22: Monkey Map
 - [ ] Day 23: Unstable Diffusion
 - [ ] Day 24: Blizzard Basin
